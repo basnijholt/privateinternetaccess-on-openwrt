@@ -104,7 +104,7 @@ to reboot after the connection is down, create (fill in your own IP at `IP_ISP`)
 ```
 cat >> /etc/openvpn/checkvpn.sh << EOF
 IP_ISP="87.1.1.1"
-IP=`wget -qO- ifconfig.co`
+IP=`wget -qO- http://ipecho.net/plain`
 if [ $IP == $IP_ISP ]; then
   echo `date` >> reboot.log
   reboot
